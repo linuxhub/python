@@ -23,13 +23,12 @@ def ScanHostPort(ip_range,port_range):
         for hosts in nm.all_hosts():
             state = nm[hosts].state() #主机机状态
             if state == 'up':
-                mac = nm[hosts]['addresses']['mac'] #主机MAC地址
                 ip = nm[hosts]['addresses']['ipv4'] #主机IP地址(ipv4)
-
-                print "\n"
-                print "ip: %s" % ip
-                print "mac: %s" % mac
-
+                try:
+                    mac = nm[hosts]['addresses']['mac']  #主机MAC地址
+                except:
+                    mac = 'None'
+                    
                 open_port_list = []
                 port_list = nm[hosts][proto].keys()  # tcp协议的端口
                 port_list.sort()
@@ -38,7 +37,11 @@ def ScanHostPort(ip_range,port_range):
                     if port_state == 'open':
                         #print "port: %s" % port
                         open_port_list.append(port)
-
+                
+                print "\n"
+                print "ip: %s" % ip
+                print "mac: %s" % mac
+                
                 if len(open_port_list):
                     #print open_port_list
                     open_port = str(open_port_list)[1:-1]
