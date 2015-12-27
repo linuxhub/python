@@ -1,0 +1,24 @@
+
+入口:
+http://baike.baidu.com/view/21087.htm
+
+#标题
+<dd class="lemmaWgt-lemmaTitle-title">
+<h1>Python</h1>
+</dd>
+
+#简介
+<div class="lemma-summary" label-module="lemmaSummary">  *** </div>
+
+
+#
+craw 1 : http://baike.baidu.com/view/21087.htm
+craw 2 : http://baike.baidu.com/view/16068.htm
+craw 3 : http://baike.baidu.com/view/53557.htm
+craw 4 : http://baike.baidu.com/view/10812277.htm
+craw 5 : http://baike.baidu.com/view/32571.htm
+craw 6 : http://baike.baidu.com/view/757238.htm
+craw 7 : http://baike.baidu.com/view/2888099.htm
+craw 8 : http://baike.baidu.com/view/1369367.htm
+craw 9 : http://baike.baidu.com/view/737.htm
+craw 10 : http://baike.baidu.com/view/38648.htm
