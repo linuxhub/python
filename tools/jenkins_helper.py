@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 #encoding:utf8
 #author: zeping lai
-import re
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import re
 import time
 
 class Jenkins():
@@ -41,7 +41,7 @@ class Jenkins():
 
     def on_aout_refresh_page(self):
         '''
-        开启自动刷新页面
+        开启jenkins自动刷新页面
         :return:
         '''
         refresh = self.driver.find_element_by_id("right-top-nav").find_element_by_tag_name("a")
@@ -54,14 +54,16 @@ class Jenkins():
 
     def search(self,domain):
         '''
-        查询选择选择项目，如果查询结果有该项目则返回True否则返回False
-        :return:
+        查询选择job项目，如果有该项目则返回True否则返回False
+        :param domain:  网站域名
+        :return:  返回网站域名对应的job项目名称，否则返回Flase
         '''
-        try:
-            # 在上线的网站域名
-            # domain = 'www.linuxhub.com'
 
-            # 项目
+        try:
+            # 网站域名
+            # domain = 'www.linuxhub.org'
+
+            # job 项目名称
             job = domain + '_online'
 
             # 查找
@@ -91,7 +93,7 @@ class Jenkins():
         '''
         构建项目，构建成功返回True,否则返回Flase
         :param job: 项目名称
-        :return:
+        :return:  构建发布成功则返回True,否则返回Flase
         '''
 
         try:
@@ -147,8 +149,7 @@ if __name__ == '__main__':
             else:
                 print "项目构建失败: " + job
         else:
-            print "没有这个项目" + job
+            print "没有这个项目: " + job
     else:
         print "登录失败"
-
 
