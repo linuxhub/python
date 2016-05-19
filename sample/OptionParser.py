@@ -20,3 +20,7 @@ if args.filename and args.domain != None:
 else:
     print "\nPlease see --help for more details.\n"
     sys.exit(-1)
+    
+print "FileName: " + str(filename)
+print "Doiam: " + str(domain)
+
