@@ -2,8 +2,9 @@
 #encoding:utf8
 #author: zeping lai
 
-from optparse import OptionParser
 import sys
+from optparse import OptionParser
+
 parser = OptionParser()
 
 parser.add_option("-f", "--file", dest="filename",
